@@ -20,6 +20,9 @@
   transform: translateX(-50%);
   width: var(--img-size);
   height: var(--img-size);
+  /* object-fit: cover; */
+  /* width: 360px;
+  height: 380px; */
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);

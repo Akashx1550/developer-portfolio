@@ -14,6 +14,7 @@ import {
     FaGithub,
     FaYoutube,
     FaBlogger,
+    FaTelegram
 } from 'react-icons/fa';
 
 function Landing() {
@@ -127,13 +128,13 @@ function Landing() {
                                 />
                             </a>
                         )}
-                        {socialsData.blogger && (
+                        {socialsData.telegram && (
                             <a
-                                href={socialsData.blogger}
+                                href={socialsData.telegram}
                                 target='_blank'
                                 rel='noreferrer'
                             >
-                                <FaBlogger
+                                <FaTelegram
                                     className='landing--social'
                                     style={{ color: theme.secondary }}
                                     aria-label='Blogger'

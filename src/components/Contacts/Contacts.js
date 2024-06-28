@@ -16,10 +16,15 @@ import {
     FaInstagram,
     FaGitlab,
     FaMediumM,
+    FaTelegram,
+    FaWhatsapp ,
+    FaDiscord ,
 } from 'react-icons/fa';
 import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 import { FiPhone, FiAtSign } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { SiLeetcode } from "react-icons/si";
+import { IoMailOpenSharp } from "react-icons/io5";
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
@@ -176,7 +181,7 @@ function Contacts() {
                                     Name
                                 </label>
                                 <input
-                                    placeholder='John Doe'
+                                    placeholder='Akash'
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     type='text'
@@ -192,7 +197,7 @@ function Contacts() {
                                     Email
                                 </label>
                                 <input
-                                    placeholder='John@doe.com'
+                                    placeholder='akash@gmail.com'
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     type='email'
@@ -353,24 +358,24 @@ function Contacts() {
                                     <FaInstagram aria-label='Instagram' />
                                 </a>
                             )}
-                            {socialsData.medium && (
+                            {socialsData.discord && (
                                 <a
-                                    href={socialsData.medium}
+                                    href={socialsData.discord}
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
-                                    <FaMediumM aria-label='Medium' />
+                                    <FaDiscord  aria-label='discord' />
                                 </a>
                             )}
-                            {socialsData.blogger && (
+                            {socialsData.leetcode && (
                                 <a
-                                    href={socialsData.blogger}
+                                    href={socialsData.leetcode}
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
-                                    <FaBloggerB aria-label='Blogger' />
+                                    <SiLeetcode aria-label='leetcode' />
                                 </a>
                             )}
                             {socialsData.youtube && (
@@ -383,37 +388,37 @@ function Contacts() {
                                     <FaYoutube aria-label='YouTube' />
                                 </a>
                             )}
-                            {socialsData.reddit && (
+                            {socialsData.email && (
                                 <a
-                                    href={socialsData.reddit}
+                                    href={socialsData.email}
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
-                                    <FaRedditAlien aria-label='Reddit' />
+                                    <IoMailOpenSharp aria-label='email' />
                                 </a>
                             )}
-                            {socialsData.stackOverflow && (
+                            {socialsData.telegram && (
                                 <a
-                                    href={socialsData.stackOverflow}
+                                    href={socialsData.telegram}
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
-                                    <FaStackOverflow aria-label='Stack Overflow' />
+                                    <FaTelegram aria-label='telegram' />
                                 </a>
                             )}
-                            {socialsData.codepen && (
+                            {socialsData.whatsapp && (
                                 <a
-                                    href={socialsData.codepen}
+                                    href={socialsData.whatsapp}
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
-                                    <FaCodepen aria-label='CodePen' />
+                                    <FaWhatsapp aria-label='whatsapp' />
                                 </a>
                             )}
-                            {socialsData.gitlab && (
+                            {/* {socialsData.gitlab && (
                                 <a
                                     href={socialsData.gitlab}
                                     target='_blank'
@@ -422,7 +427,7 @@ function Contacts() {
                                 >
                                     <FaGitlab aria-label='GitLab' />
                                 </a>
-                            )}
+                            )} */}
                         </div>
                     </div>
                 </div>
