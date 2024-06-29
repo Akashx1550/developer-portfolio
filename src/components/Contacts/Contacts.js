@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import axios from 'axios';
@@ -17,8 +17,8 @@ import {
     FaGitlab,
     FaMediumM,
     FaTelegram,
-    FaWhatsapp ,
-    FaDiscord ,
+    FaWhatsapp,
+    FaDiscord,
 } from 'react-icons/fa';
 import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 import { FiPhone, FiAtSign } from 'react-icons/fi';
@@ -27,6 +27,7 @@ import { SiLeetcode } from "react-icons/si";
 import { IoMailOpenSharp } from "react-icons/io5";
 
 import { ThemeContext } from '../../contexts/ThemeContext';
+import emailjs from 'emailjs-com';
 
 import { socialsData } from '../../data/socialsData';
 import { contactsData } from '../../data/contactsData';
@@ -134,27 +135,16 @@ function Contacts() {
 
     const classes = useStyles();
 
+    const form = useRef();
+
     const handleContactForm = (e) => {
         e.preventDefault();
 
         if (name && email && message) {
             if (isEmail(email)) {
-                const responseData = {
-                    name: name,
-                    email: email,
-                    message: message,
-                };
-
-                axios.post(contactsData.sheetAPI, responseData).then((res) => {
-                    console.log('success');
-                    setSuccess(true);
-                    setErrMsg('');
-
-                    setName('');
-                    setEmail('');
-                    setMessage('');
-                    setOpen(false);
-                });
+                emailjs.sendForm('service_ciz4jme', 'template_zotk8nf', form.current, 'PhXSPW2Qd_7dvnWta')
+                console.log("Email sent!")
+                setSuccess(true);
             } else {
                 setErrMsg('Invalid email');
                 setOpen(true);
@@ -175,39 +165,39 @@ function Contacts() {
                 <h1 style={{ color: theme.primary }}>Contacts</h1>
                 <div className='contacts-body'>
                     <div className='contacts-form'>
-                        <form onSubmit={handleContactForm}>
+                        <form ref={form} onSubmit={handleContactForm}>
                             <div className='input-container'>
-                                <label htmlFor='Name' className={classes.label}>
+                                <label htmlFor='name' className={classes.label}>
                                     Name
                                 </label>
                                 <input
-                                    placeholder='Akash'
+                                    placeholder='Enter your name'
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     type='text'
-                                    name='Name'
+                                    name='name'
                                     className={`form-input ${classes.input}`}
                                 />
                             </div>
                             <div className='input-container'>
                                 <label
-                                    htmlFor='Email'
+                                    htmlFor='email'
                                     className={classes.label}
                                 >
                                     Email
                                 </label>
                                 <input
-                                    placeholder='akash@gmail.com'
+                                    placeholder='Your Email Id'
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     type='email'
-                                    name='Email'
+                                    name='email'
                                     className={`form-input ${classes.input}`}
                                 />
                             </div>
                             <div className='input-container'>
                                 <label
-                                    htmlFor='Message'
+                                    htmlFor='message'
                                     className={classes.label}
                                 >
                                     Message
@@ -217,7 +207,7 @@ function Contacts() {
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     type='text'
-                                    name='Message'
+                                    name='message'
                                     className={`form-message ${classes.message}`}
                                 />
                             </div>
@@ -365,7 +355,7 @@ function Contacts() {
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
-                                    <FaDiscord  aria-label='discord' />
+                                    <FaDiscord aria-label='discord' />
                                 </a>
                             )}
                             {socialsData.leetcode && (
