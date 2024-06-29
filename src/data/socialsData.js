@@ -1,7 +1,7 @@
 export const socialsData = {
     github: 'https://github.com/akashx1550',
     facebook: 'https://www.facebook.com/profile.php?id=100014805342167',
-    linkedIn: 'https://www.linkedin.com/in/akash-x-11734b225/',
+    linkedIn: 'https://www.linkedin.com/in/akash-11734b225',
     instagram: 'https://www.instagram.com/redstien/',
     codepen: 'https://codepen.io/',
     twitter: 'https://twitter.com/Akash__X',
@@ -11,7 +11,7 @@ export const socialsData = {
     stackOverflow: 'https://stackoverflow.com/users/',
     gitlab: 'https://gitlab.com/',
     youtube: 'https://www.youtube.com/channel/UCcfhYj40omoouvdxkHvMkeg',
-    leetcode: 'https://leetcode.com',
+    leetcode: 'https://leetcode.com/u/akashx1550/',
     email : 'mailto:akashx1550@gmail.com',
     telegram : 'https://t.me/akashx1550',
     whatsapp: 'https://wa.me/917017962881',
