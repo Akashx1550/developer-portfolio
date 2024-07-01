@@ -28,7 +28,7 @@ export const projectsData = [
         projectDesc: 'This project is a full fledged blog application where users can read blogs and also contribute them.',
         tags: ['HBS','MongoDB', 'Express.js', 'Node.js'],
         code: 'https://github.com/Akashx1550/Fullstack-Blog-App',
-        demo: 'https://fullstack-blog-app-v3k0.onrender.com/',
+        demo: 'https://fullstack-blog-app-4g98.onrender.com',
         image: blog
     },
     {
